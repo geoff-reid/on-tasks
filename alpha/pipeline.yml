@@ -1,0 +1,15 @@
+---
+resources:
+- name: on-tasks
+  type: git
+  source:
+    uri: https://github.com/geoff-reid/on-tasks.git
+
+jobs:
+- name: job-test-on-tasks
+  public: true
+  plan:
+  - get: on-tasks
+    trigger: true
+  - task: check_code
+    file: on-tasks/alpha/unittest.yml
