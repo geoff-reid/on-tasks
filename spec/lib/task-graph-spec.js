@@ -68,7 +68,7 @@ describe('Task Graph', function () {
             expect(definitions.graphDefinition.tasks[1].waitOn).to.have.property('test-1');
             return TaskGraph.create(undefined, { definition: definitions.graphDefinition })
             .then(function() {
-                expect(definitions.graphDefinition.tasks[1].waitOn).to.have.property('test-2');
+                expect(definitions.graphDefinition.tasks[1].waitOn).to.have.property('test-1');
             });
         });
 
